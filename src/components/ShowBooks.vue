@@ -6,13 +6,13 @@
           <data-table :search-phrase="search" />
         </v-card>
       </v-col>
-
     </v-row>
   </v-container>
 </template>
 
 <script>
 import DataTable from '@/components/DataTable'
+import eventBus from '@/main'
 
 export default {
   components: {
@@ -21,6 +21,13 @@ export default {
 
   data: () => ({
     search: ''
-  })
+  }),
+
+  mounted () {
+    // Listen to event of 'phrase-changed' when triggered
+    eventBus.$on('phrase-changed', (data) => {
+      this.search = data
+    })
+  }
 }
 </script>

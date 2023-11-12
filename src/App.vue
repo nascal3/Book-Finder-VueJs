@@ -15,11 +15,15 @@
 
       <div>
         <v-text-field
+          v-model="search"
+          @keydown="changedInput"
+          @click:clear="clearedInput"
           prepend-inner-icon="mdi-magnify"
           placeholder="Search by Author / Title"
           dense
           solo
           hide-details
+          clearable
           light
         ></v-text-field>
       </div>
@@ -38,12 +42,27 @@
 </template>
 
 <script>
+import eventBus from '@/main'
+
 export default {
   name: 'App',
 
   data: () => ({
+    search: '',
     currentYear: new Date().getFullYear()
-  })
+  }),
+
+  methods: {
+    // Detect when each keystroke is typed and emit the event
+    changedInput () {
+      eventBus.$emit('phrase-changed', this.search)
+    },
+
+    // Detect when search input is cleared and emit the event
+    clearedInput () {
+      eventBus.$emit('phrase-changed', '')
+    }
+  }
 }
 </script>
 
