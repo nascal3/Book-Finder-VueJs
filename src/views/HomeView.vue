@@ -1,19 +1,16 @@
 <template>
-  <hello-world />
+  <show-books />
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld'
+import ShowBooks from '../components/ShowBooks'
 
 export default {
   name: 'Home-page',
 
   components: {
-    HelloWorld
-  },
-
-  mounted () {
-    console.log('>>>', process.env.VUE_APP_GOOGLE_CLIENT_ID)
+    ShowBooks
   }
+
 }
 </script>
