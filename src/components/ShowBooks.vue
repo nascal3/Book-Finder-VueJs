@@ -5,7 +5,6 @@
         <v-card width="60%" class="pa-2 mt-2" outlined>
           <data-table :search-phrase="search" />
         </v-card>
-
       </v-col>
 
     </v-row>
