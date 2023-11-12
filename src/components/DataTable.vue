@@ -1,6 +1,8 @@
 <template>
   <v-data-table
     class="ma-2"
+    :loading="!initialize"
+    loading-text="Data loading..."
     :headers="headers"
     :items="books"
     :search="search"
@@ -40,6 +42,10 @@ export default {
   },
 
   computed: {
+    initialize () {
+      return this.books
+    },
+
     books () {
       return booksData.books
     }
