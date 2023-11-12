@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import ShowBooks from '../components/ShowBooks'
+import ShowBooks from '@/components/ShowBooks'
 
 export default {
   name: 'Home-page',
