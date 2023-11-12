@@ -4,10 +4,11 @@
     <v-app-bar
       app
       color="primary"
+      height="56"
       dark
     >
       <div class="d-flex align-center">
-        <div>Book Finder</div>
+        <div class="nav-title">Book Finder</div>
       </div>
 
       <v-spacer></v-spacer>
@@ -47,6 +48,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .nav-title {
+    font-size: 20px;
+  }
   .footer {
     background-color: #212529;
     color: #FFFFFF;
